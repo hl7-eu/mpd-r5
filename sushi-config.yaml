@@ -1,15 +1,18 @@
+
 id: hl7.fhir.eu.mpd-r5
 canonical: http://hl7.eu/fhir/mpd-r5 # check if this may create issues
+
+
 name:  Hl7EuMedPrescriptionDispenseIg
 title: HL7 Europe Medication Prescription and Dispense
 description: This guide describes how to represent in HL7 FHIR Prescription and Dispense in the European context
 status: draft # draft | active | retired | unknown
-version: 0.1.0-ballot
+version: 0.1.0-ci-build
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
-releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
+releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-jurisdiction: 	http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe" # urn:iso:std:iso:3166#EU
+jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#150 "Europe" # urn:iso:std:iso:3166#EU
 publisher:
   name:  HL7 Europe
   url: http://hl7.eu
@@ -22,6 +25,7 @@ copyright: >-
 # use cases, the value can be an object with keys for id, uri, and version.
 #
 dependencies:
+  
    # hl7.fhir.uv.ips: current
    ihe.pharm.mpd: 1.0.0-comment-2 
    hl7.fhir.eu.base-r5: 0.1.0-ballot
@@ -32,6 +36,8 @@ dependencies:
 #     id: mcode
 #     uri: http://hl7.org/fhir/us/mcode/ImplementationGuide/hl7.fhir.us.mcode
 #     version: 1.0.0
+   
+   
 #
 #
 # The pages property corresponds to IG.definition.page. SUSHI can
@@ -93,10 +99,13 @@ pages:
 # partial list of allowed parameters see:
 # https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
 #
+
 parameters:
 #  produce-jekyll-data: true
   special-url:
     - http://hl7.eu/fhir/StructureDefinition/package-type
+
+
 
 
 #   excludettl: true
@@ -138,6 +147,7 @@ menu:
     Cross-version Analysis: crossversionanalysis.html
   Artifacts: artifacts.html
   R4 IG: https://hl7.eu/fhir/mpd/
+  
   
 
 # ╭───────────────────────────Less Common Implementation Guide Properties──────────────────────────╮
@@ -212,20 +222,20 @@ menu:
 #
 groups:
  eHNGuidelines:
-   name: Data Sets from eHN Guidelines
-   description: eHealth Network Guidelines data sets represented as FHIR logical models. Please note, that eHN data sets do not have explicit information about cardinality and data types. New, fully machine-readable logical information models are being created in Xt-EHR project. See more information about new EHDS logical models work on [Logical Models page](logicalmodels.html).
-   resources:
-     - EprescriptionEhn
-     - EdispensationEhn
-     - MedProductEhn
-     - SubjectEpEhn
+  name: Data Sets from eHN Guidelines
+  description: eHealth Network Guidelines data sets represented as FHIR logical models. Please note, that eHN data sets do not have explicit information about cardinality and data types. New, fully machine-readable logical information models are being created in Xt-EHR project. See more information about new EHDS logical models work on [Logical Models page](logicalmodels.html).
+  resources:
+   - EprescriptionEhn
+   - EdispensationEhn
+   - MedProductEhn
+   - SubjectEpEhn
  FHIRProfiles:
-   name: FHIR Profiles
-   description: Profiles for ePrescription and eDispensation use case. Note that there is no single profile for ePrescription, but only for MedicationRequest, which translates to a single line on a prescription (read more in [Implementation Notes](implementationnotes.html)). Profiles for Patient, PractitionerRole, and Organization are published in HL7 Europe Base IG. All profiles are based on [EHDS logical information models](logicalmodels.html) that are being developed by Xt-EHR project.
-   resources: 
-    - MedicationRequestEuMpd
-    - MedicationDispenseEuMpd
-    - MedicationEuMpd
+  name: FHIR Profiles
+  description: Profiles for ePrescription and eDispensation use case. Note that there is no single profile for ePrescription, but only for MedicationRequest, which translates to a single line on a prescription (read more in [Implementation Notes](implementationnotes.html)). Profiles for Patient, PractitionerRole, and Organization are published in HL7 Europe Base IG. All profiles are based on [EHDS logical information models](logicalmodels.html) that are being developed by Xt-EHR project.
+  resources: 
+   - MedicationRequestEuMpd
+   - MedicationDispenseEuMpd
+   - MedicationEuMpd
 # ModelMaps:
 #  name: Mappings from eHN Data Sets
 #  description: These concept maps represent a high-level mapping from eHN guidelines data sets and FHIR profiles in this IG. Please note that mappings from EHDS logical models are provided on [Logical models page](logicalmodels.html).

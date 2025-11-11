@@ -9,12 +9,14 @@ Medicines agencies are following European Medicines Agency's guideline for imple
 
 ### Crossborder terminology
 
-MyHealth@EU data exchange for eP and eD is based on CDA and it is operational in an increasing number of countries, allowing patients to buy their prescription drugs from another country's pharmacy. Prescription created in country A is translated to country B language to make it understandable for the country B pharmacist. Dispensation information travels back to country A and is at least partly stored in the country A prescrption/dispensation system. This data flow with automatic translation of coded elements is possible thanks to central terminology services - this includes:  
+MyHealth@EU data exchange for eP and eD is based on CDA and it is operational in an increasing number of countries, allowing patients to buy their prescription drugs from another country's pharmacy. Prescription created in country A is translated to country B language to make it understandable for the country B pharmacist. Dispensation information travels back to country A and is at least partly stored in the country A prescription/dispensation system. This data flow with automatic translation of coded elements is possible thanks to central terminology services - this includes:  
 - central value sets (Master ValueSet Catalogue) in English,  
 - mappings from national country A value sets to central value sets,  
 - translation of central value sets to all country B languages.  
 
-The following tables illustrate the differences between what is needed in cross-border services (top) compared to what is used by the regulatory domain (bottom).  
+The following two tables illustrate the differences between what is used in cross-border services and by the regulatory domain.  
+
+Table 1: Code systems used in MyHealth@EU services  
 
 |**Data element**|**Code system**|**Example code and display**|  
 |Dose form|EDQM|10221000 Film-coated tablet|  
@@ -27,6 +29,8 @@ The following tables illustrate the differences between what is needed in cross-
 {:.table-bordered .table-striped .thead-light}  
    
 In EMA specifications for regulatory data exchange, similar concepts are used (same displays), but a different code system:   
+
+Table 2: Comparison of code systems used in MyHealth@EU and EMA services  
 
 |**Coded attribute**|**MyHealth@EU**|**EMA RMS**|**Display name**|  
 |Dose form|EDQM: 10221000|100000073665|Film-coated tablet|  
@@ -122,6 +126,6 @@ This specification encourages using ATC as a classification in the data element 
 
 National or proprietary codesystems are used in most countries, and they are likely to keep their importance in the national infrastructure, at least in processes that need to handle legacy data. Transition to new code systems requires mapping and/or double Coding in FHIR resources.  
   
-It is also worth mentioning, that there also national flavours of international codesystems used in countries, for example, Estonian ATC is enriched so, that it provides codes for all combinations of ingredients, extending the code system where official ATC stops at a grouper concept. Also, in many countries, EDQM terms has been used for dose forms for a long time, but with local codes, not official EDQM codes.  
+It is also worth mentioning, that there are also national flavours of international codesystems used in countries, for example, Estonian ATC is enriched so, that it provides codes for all combinations of ingredients, extending the code system where official ATC stops at a grouper concept. Also, in many countries, EDQM terms has been used for dose forms for a long time, but with local codes, not official EDQM codes.  
   
 These local variations may be deeply rooted in clinical systems (including decision support mechanisms) and discontinuing them may be a slow or unnecessary process. Therefore, significant changes in code systems on a national level should be analysed carefully.
